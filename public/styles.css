@@ -1,0 +1,204 @@
+/* add fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap');
+
+/* All class using name dataset */
+:root{
+    /* Define Variables */
+    --accent : #FF0000; /* Button color */
+    --accentHover : #FF9A9A; /* mouse hover */
+    --dark60 : rgba(243, 243, 243, 0.6); /* 0.6 = 60% */
+    --light : #FFFFFF;
+    --transition : all 0.3s ease 0s /* delay time */
+}
+
+/* All section */
+*{
+    /* Clear margin and padding */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%; /* Fixed height using scroll*/
+    overflow: auto;
+}
+
+body{
+    /* Gradient Shade color*/
+    /* background: linear-gradient(
+        var(--dark60), var(--dark60)
+    ),
+    url(./images/dog\ background.jpg); */
+    background-image: url("images/dog background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; /* fixed scale screen*/
+}
+
+a, button, p{
+    font-family: "Oswald", sans-serif;
+    color: var(--light);
+}
+
+a, button, .logo{
+    cursor: pointer;
+}
+
+main{
+    height: 100;
+    display: grid;
+    grid-template-columns: minmax(60px, 1fr) repeat(6, minmax(50px, 190px))
+    minmax(60px, 1fr); 
+}
+
+header{
+    grid-column: 1 / span 7;
+    margin-left: 5%;
+}
+
+.logo{
+    width: 250px;
+    height: 150px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    height: 150px;
+}
+
+.links{
+    margin-left: auto;
+}
+
+.links a, .links button{
+    font-size: 2rem;
+    font-weight: 400;
+    transition: var(--transition);
+    margin: 10px;
+}
+
+.links a:hover{
+    color: var(--accentHover);
+}
+
+.button_med{
+    border: none;
+    background-color: var(--accent);
+    padding: 4px 15px;
+    transition: var(--transition);
+}
+
+.button_med:hover{
+    color: var(--accentHover);
+}
+
+.info{
+    grid-column: 3 / span 4;
+    margin-top: 30%;
+    text-align: center;
+}
+
+.content_font1{
+    font-family: "Oswald", sans-serif;
+    color: black;
+    font-size: 5.5rem;
+}
+
+.content_font2{
+    font-family: "Oswald", sans-serif;
+    color: var(--light);
+    font-size: 2.5rem;
+}
+
+.icons{
+    margin-top: 10%;
+    display: flex;
+    bottom: 0px;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.icon{
+    margin-right: 30px;
+}
+
+.icon img{
+    width: 100px;
+    height: 100px;
+}
+
+.icon_info{
+    text-align: center;
+}
+
+.features{
+    grid-column: 2 / span 7;
+    margin-top: 6%;
+    padding: 30px 0px 0px 20px;
+    display: flex;
+    position: absolute;
+    right: 5%;
+    bottom: 5%;
+    font-size: 30px;
+}
+
+.feature{
+    display: flex;
+    margin: 0px 10px 30px 10px;
+}
+
+.feature img{
+    width: 160px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.feature_info p{
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.feature:hover{
+    color: var(--accentHover);
+}
+
+
+.feature_top, .feature_more{
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width:1100px){
+    .icon img{
+        height: 55px;
+        width: auto;
+    }
+    .content_font1, .content_font2{
+        font-size: 2.5rem;
+    }
+    .feature{
+        grid-column: 1 / span 7;
+    }
+}
+
+@media only screen and (max-width:850px){
+    .info{
+        grid-column: 2 / span 7;
+    }
+    .icons{
+        flex-direction: column;
+    }
+    .content_font1,.content_font2{
+        font-size: 2.5rem;
+    }
+    .features{
+        flex-direction: column;
+    }
+}
