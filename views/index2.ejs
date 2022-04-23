@@ -26,29 +26,39 @@
             <h1 class="content_font1"><%=contentfont1 %></h1>
             <h4 class="content_font2"><%=contentfont2 %></h4>
             <div class="icons">
-                <div class="icon">
-                    <img src="images/messenger.svg" alt="email">
-                    <p class="icon_info">thanavit.than@bumail.net</p>
+
+            <% obj_icon.forEach(function(icon){%>
+                <div class="icon1">
+                    <img src=<%= icon.icon %> >
+                    <p class="icon_info"><%= icon.info%></p>
                 </div>
-                <div class="icon">
-                    <img src="images/facebook.svg" alt="facebook">
+                <div class="icon2">
+                    <img src=<%= icon.icon2 %>>
                 </div>
+                <% }) %>
+
             </div>
         </section>
         <!-- Feature bar -->
          <section class="features">
+             <!--Add Parameter that forEach loop-->
+             <% obj_feature.forEach(function(feature){ %>
+                
              <div class="feature">
-                 <img src="images/image logo.svg" alt="image_logo">
+                 <img src= <%= feature.img %>>
                  <div class="feature_info">
-                     <p class="feature_top">Images</p>
+                     <p class="feature_top"><%= feature.top%></p>
                  </div>
              </div>
+            <% }) %>
+            <!-- Comment not use
              <div class="feature">
                 <img src="images/talk logo.svg" alt="talk_logo">
                 <div class="feature_info">
                     <p class="feature_more">Talk</p>
                 </div>
             </div>
+            -->
          </section>
     </main>
 </body>

@@ -12,9 +12,20 @@ var user_list = [
     { name: "Jasper", address: "CNX", birth_year: 2010},
 ];
 
+//Add icon variables
+var icon = [
+    {icon : "images/messenger.svg", info : "thanavit.than@bumail.net :)"},
+    {icon2 : "images/facebook.svg"}
+]
+
+//Add Feature Bar variables
+var feature = [
+    {img : "images/image_logo.svg", top : "Images Dog"}
+]
+
 //Add Content Fonts Variables
-var contentfont1 = "Dog Community"
-var contentfont2 = "By Thanavit"
+var contentfont1 = "DOG COMMUNITY"
+var contentfont2 = "BY THANAVIT"
 
 //Set & Call EJS
 app.set('view engine','ejs')
@@ -34,7 +45,8 @@ app.get("/",(req,res) =>{
 
 //Connect index2.ejs
 app.get("/index2",(req,res) =>{
-    res.render('index2', {contentfont1 : contentfont1, contentfont2 : contentfont2})
+    res.render('index2', {contentfont1 : contentfont1, contentfont2 : contentfont2,
+    obj_feature : feature, obj_icon : icon})
 })
 
 //Open Server
